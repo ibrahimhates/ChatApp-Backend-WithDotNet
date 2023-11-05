@@ -15,7 +15,6 @@ builder.Services.AddSingleton<IDictionary<string, UserConnection>>(opts =>
     new Dictionary<string, UserConnection>()
 );
 
-
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(build =>
