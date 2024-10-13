@@ -1,0 +1,9 @@
+﻿services:
+  signalr.api:
+    image: signalr.api
+    build:
+      context: .
+      dockerfile: SignalR.Api/Dockerfile
+    ports: 
+      - "7157:7157"
+    restart: always
