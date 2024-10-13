@@ -15,6 +15,15 @@ builder.Services.AddSingleton<IDictionary<string, UserConnection>>(opts =>
     new Dictionary<string, UserConnection>()
 );
 
+builder.Services.AddSingleton<IDictionary<Guid, string>>(opts =>
+    {
+        var rooms = new Dictionary<Guid, string>();
+        rooms.Add(Guid.NewGuid(), "GENEL");
+        return rooms;
+    }
+);
+
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(build =>
@@ -40,10 +49,7 @@ app.UseRouting();
 
 app.UseCors();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapHub<ChatHub>("/chat");
-});
+app.UseEndpoints(endpoints => { endpoints.MapHub<ChatHub>("/chat"); });
 
 app.UseHttpsRedirection();
 
