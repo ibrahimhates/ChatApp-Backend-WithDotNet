@@ -30,8 +30,8 @@ builder.Services.AddCors(options =>
     {
         build.WithOrigins("http://localhost:3000"
                 ,"http://192.168.1.139:3000"
-                ,"https://chatapp.askforetu.com.tr/"
-                ,"http://chatapp.askforetu.com.tr/")
+                ,"https://chatapp.askforetu.com.tr"
+                ,"http://chatapp.askforetu.com.tr")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
